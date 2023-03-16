@@ -44,7 +44,7 @@ export const Botao = styled.button`
     text-align: center;
     color: #FFFFFF;
 `
-export const Link = styled.a`
+export const ENDERECO = styled.p`
     font-family: 'Lexend Deca';
     font-style: normal;
     font-weight: 400;

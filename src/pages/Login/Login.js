@@ -1,5 +1,6 @@
-import {Corpo, Logo, InputLogin, Botao, Link} from "./LoginStyle"
+import {Corpo, Logo, InputLogin, Botao, ENDERECO} from "./LoginStyle"
 import logo from "../../assets/logo.svg"
+import { Link } from "react-router-dom"
 
 export default function Login(){
 
@@ -9,7 +10,11 @@ export default function Login(){
             <InputLogin placeholder="email" />
             <InputLogin placeholder="senha" />
             <Botao>Entrar</Botao>
-            <Link src="">Não tem uma conta? Cadastre-se!</Link>
+            <ENDERECO>
+                <Link to="/cadastro">
+                    Não tem uma conta? Cadastre-se!
+                </Link>
+            </ENDERECO>
         </Corpo>
     )
 }
