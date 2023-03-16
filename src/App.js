@@ -1,14 +1,20 @@
+import Login from "./pages/Login/Login"
+import Cadastro from "./pages/Login/Cadastro"
+import Hoje from "./pages/Hoje/Hoje"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="http://cbissn.ibict.br/images/phocagallery/galeria2/thumbs/phoca_thumb_l_image03_grd.png"/>
-        <p>
-          TrackIt
-        </p>
-        
-      </header>
-    </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login/>} />
+          <Route path="/cadastro" element={<Cadastro/>} />  
+          <Route path="/hoje" element={<Hoje/>} />
+          {/* <Route path="/habitos" element={<Habitos/>} />
+          <Route path="/historico" element={<Historico/>} /> */}
+        </Routes>
+      </BrowserRouter>
+    
   );
 }
 
