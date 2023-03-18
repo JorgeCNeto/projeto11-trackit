@@ -25,6 +25,7 @@ const Top = styled.div`
     padding-left: 18px;
     padding-right: 18px;
     align-items: center;
+    margin-bottom: 28px;
 `
 const Logo = styled.h2`
     font-family: 'Playball';
@@ -33,11 +34,12 @@ const Logo = styled.h2`
     font-size: 38.982px;
     line-height: 49px;
     color: #FFFFFF;
+    margin-left: 18px;
 `
 
 const Foto = styled.img`
     width: 51px;
     height: 51px;    
     border-radius: 100px;
-    
+    margin-right: 18px;
 `

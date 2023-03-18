@@ -4,17 +4,24 @@ import { Link } from "react-router-dom"
 import {URL_LOGIN} from "../../constants/urls"
 import axios from "axios"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 
 export default function Login(){
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    let navigate = useNavigate();
 
     function login(){
         const logar = {email, password}
-        console.log(logar)
+        
         const promise = axios.post(URL_LOGIN, logar)
-        promise.then(res => alert("foi a requisição"))  //ir para o link: /hoje
-        promise.catch(err => console.log(err.responde.data)/*alert("Usuário e/ou senha inválidos!")*/)
+        promise.then(res => {            
+            navigate("/hoje")
+        }) 
+        promise.catch(err => {
+            console.log(err.responde.data)
+            alert("Usuário e/ou senha inválidos!")
+        })
     }
 
     return (

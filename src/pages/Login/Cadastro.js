@@ -21,29 +21,21 @@ export default function Login(){
         const cadastro = {email, name, image, password}
         console.log(cadastro)
         const promise = axios.post(URL_CADASTRO, cadastro)
-        promise.then(res => alert("foi a requisição"))
+        promise.then(res => console.log(res))
         promise.catch(err => console.log(err.response.data))
-
-        // axios.post(`${URL_CADASTRO}`)
-        // .then(res => {
-        //     email: email,
-        //     name: name,
-        //     image: image,
-        //     password: password
-        // })
-        // .catch(err => console.log(err.respode.data))
+      
     }
    
     return (
         <Corpo>
             <Logo src={logo} />
-            <form onSubmit={cadastramento}>
+            {/* <form onSubmit={cadastramento}> */}
                 <InputLogin type="email" placeholder="email" required value={email} onChange={e => setEmail(e.target.value)}/>
                 <InputLogin type="password" placeholder="senha" required value={password} onChange={e => setPassword(e.target.value)}/>
                 <InputLogin type="text" placeholder="nome" required value={name} onChange={e => setName(e.target.value)}/>
                 <InputLogin type="text" placeholder="foto" required value={image} onChange={e => setImage(e.target.value)}/>
-                <Botao type="submit">Entrar</Botao>
-            </form>
+                <Botao onClick={cadastramento} type="submit">Entrar</Botao>
+            {/* </form> */}
             <ENDERECO>
                 <Link to="/">
                     Já tem uma conta? Faça login!
