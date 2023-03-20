@@ -11,6 +11,8 @@ export default function Hoje(){
             <Topo/>
             <Data />
             <Tarefa/>
+            <Tarefa/>
+            <Tarefa/>
             <Baixo />
         </HojeFormatacao>
     )
@@ -21,5 +23,6 @@ const HojeFormatacao = styled.div`
     flex-direction: column;
     align-items: center;
     background-color: #E5E5E5;
+    overflow-y: scroll;
     
 `

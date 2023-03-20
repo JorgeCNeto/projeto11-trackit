@@ -1,7 +1,19 @@
+import { useState } from "react"
 import { BsCheckLg } from "react-icons/bs"
 import styled from "styled-components"
 
 export default function Tarefa(){
+    const [terminada, setTerminada] = useState(false)
+    
+   
+    function marcarTarefa(){
+        if (terminada === false){
+            setTerminada(true)
+        } else {
+            setTerminada(false)
+        }
+    }
+
     return(
         <Quadro>
             <Texto>                
@@ -11,7 +23,7 @@ export default function Tarefa(){
                     <TextoP>Seu recorde: 5 dias</TextoP>
                 </div>
             </Texto>
-            <Botao> <BsCheckLg color="#FFFFFF" size="50px"/> </Botao>
+            <Botao onClick={marcarTarefa} terminada={terminada}> <BsCheckLg color="#FFFFFF" size="50px"/> </Botao>
         </Quadro>
     )
 }
@@ -24,6 +36,7 @@ const Quadro = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10px;
 `
 
 const Texto = styled.div`
@@ -52,7 +65,8 @@ const TextoP = styled.p`
 const Botao = styled.button`
     width: 69px;
     height: 69px;
-    background: #EBEBEB;
+    background: ${(props) => props.terminada ? "#8FC549" : "#EBEBEB"};
     border: 1px solid #E7E7E7;
     border-radius: 5px;
+    
 `
